@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    margin: 0;
+    @apply min-h-screen bg-slate-100 font-sans text-slate-900 transition-colors duration-300;
+    background-image:
+      radial-gradient(at 40% 20%, rgb(224 231 255 / 0.5) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgb(199 210 254 / 0.35) 0px, transparent 45%),
+      radial-gradient(at 0% 50%, rgb(226 232 240 / 0.6) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
+    background-image:
+      radial-gradient(at 40% 20%, rgb(49 46 129 / 0.35) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgb(30 27 75 / 0.45) 0px, transparent 45%),
+      radial-gradient(at 0% 50%, rgb(15 23 42 / 0.9) 0px, transparent 55%);
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .ui-input {
+    @apply w-full rounded-xl border border-slate-200/90 bg-white px-3.5 py-2.5 text-sm text-slate-800 shadow-sm outline-none transition
+      placeholder:text-slate-400
+      hover:border-slate-300
+      focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20
+      dark:border-slate-600 dark:bg-slate-900/80 dark:text-slate-100 dark:placeholder:text-slate-500 dark:hover:border-slate-500
+      dark:focus:border-indigo-400 dark:focus:ring-indigo-500/25;
+  }
+
+  .ui-select {
+    @apply ui-input cursor-pointer appearance-none bg-[length:1rem] bg-[right_0.65rem_center] bg-no-repeat pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  .ui-section-title {
+    @apply text-[0.65rem] font-bold uppercase tracking-[0.12em] text-slate-500;
+  }
+
+  .ui-card {
+    @apply rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-card backdrop-blur-sm;
+  }
+
+  .ui-btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold shadow-sm outline-none transition
+      focus-visible:ring-2 focus-visible:ring-indigo-500/40 focus-visible:ring-offset-2
+      active:scale-[0.98] disabled:pointer-events-none disabled:opacity-45;
+  }
+
+  .ui-btn-primary {
+    @apply ui-btn bg-gradient-to-b from-indigo-500 to-indigo-600 text-white shadow-indigo-900/20 hover:from-indigo-400 hover:to-indigo-500;
+  }
+
+  .ui-btn-secondary {
+    @apply ui-btn border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50;
+  }
+
+  .ui-btn-muted {
+    @apply ui-btn border border-slate-200/80 bg-slate-50 text-slate-700 hover:bg-slate-100;
+  }
+
+  .ui-btn-danger {
+    @apply ui-btn border border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100;
+  }
+
+  .ui-btn-accent {
+    @apply ui-btn bg-gradient-to-b from-violet-500 to-violet-600 text-white shadow-violet-900/20 hover:from-violet-400 hover:to-violet-500;
+  }
+
+  .ui-btn-teal {
+    @apply ui-btn bg-gradient-to-b from-teal-500 to-teal-600 text-white shadow-teal-900/15 hover:from-teal-400 hover:to-teal-500;
+  }
+
+  .ui-btn-amber {
+    @apply ui-btn bg-gradient-to-b from-amber-500 to-amber-600 text-white shadow-amber-900/15 hover:from-amber-400 hover:to-amber-500;
+  }
+
+  .ui-btn-fuchsia {
+    @apply ui-btn bg-gradient-to-b from-fuchsia-500 to-fuchsia-600 text-white shadow-fuchsia-900/15 hover:from-fuchsia-400 hover:to-fuchsia-500;
+  }
+
+  .ui-btn-slate {
+    @apply ui-btn bg-gradient-to-b from-slate-600 to-slate-700 text-white hover:from-slate-500 hover:to-slate-600;
+  }
+
+  .ui-btn-emerald {
+    @apply ui-btn bg-gradient-to-b from-emerald-500 to-emerald-600 text-white shadow-emerald-900/15 hover:from-emerald-400 hover:to-emerald-500;
+  }
+
+  .ui-btn-indigo {
+    @apply ui-btn bg-gradient-to-b from-indigo-500 to-indigo-600 text-white hover:from-indigo-400 hover:to-indigo-500;
+  }
+
+  .ui-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(203 213 225) transparent;
+  }
+
+  .ui-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .ui-scroll::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-slate-300/90;
+  }
+
+  .ui-scroll::-webkit-scrollbar-track {
+    @apply rounded-full bg-transparent;
+  }
+}
